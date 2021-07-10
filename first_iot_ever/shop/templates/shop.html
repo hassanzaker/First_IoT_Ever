@@ -1,1 +1,75 @@
-<h1>hi</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+}
+a {
+  background-color: darkorange;
+  color:black;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 40px;
+  text-align: center;
+}
+a:visited {
+  background-color: darkorange;
+  color:black;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 40px;
+  text-align: center;
+}
+
+a:hover{
+  background-color: black;
+  color:darkorange;
+}
+
+</style>
+</head>
+<body>
+
+
+<h1 style="width: 100%; direction: rtl; text-align: right;">
+    به اولین دستگاه
+    <em style="direction: ltr;unicode-bidi:isolate; text-align: left;">IoT</em>
+    تاریخ خوش‌ آمدید
+    <em style="direction: ltr;unicode-bidi:isolate; text-align: left;">.</em>
+</h1>
+
+<p style="width: 100%; direction: rtl; text-align: right;">
+    می‌توانید با انتخاب محصول مورد نظر آن را رزرو کنید تا مطمعن شوید که هیچ وقت تمام نمی‌شود.
+</p>
+
+<div class="grid-container">
+  <div class="grid-item">
+    <h1>1- {{ item1.title }}</h1>
+    <h3>قیمت : {{ item1.price }} تومان</h3>
+    <h3>تعداد موجود : {{ item1.count }}</h3>
+    <h3>دما : {{ item1.tempereture }}</h3>
+    <a href="{% url 'shop:reserve' slot=1 %}">رزرو</a>
+  </div>
+  <div class="grid-item">
+    <h1>2- {{ item2.title }}</h1>
+    <h3>قیمت : {{ item2.price }} تومان</h3>
+    <h3>تعداد موجود : {{ item2.count }}</h3>
+    <h3>دما : {{ item2.tempereture }}</h3>
+    <a href="{% url 'shop:reserve' slot=2 %}">رزرو</a>
+
+  </div>
+</div>
+
+</body>
+</html>
